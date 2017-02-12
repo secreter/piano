@@ -1,0 +1,81 @@
+*{
+	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /*清除移动端点击事的透明遮罩*/
+  -webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  background-color: #555;
+}
+ul{
+
+  list-style: none;
+}
+.piano{
+	width: 100%;
+  height: 70%;
+  cursor: pointer;
+  position: absolute;
+}
+.keyboard__white{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  
+}
+.keyboard__white__btn{
+  background-color: #fff;
+  flex-grow: 1;
+  height: 100%;
+  border-left: solid 1px #333;
+  border-right: solid 1px #333;
+  border-top: solid 0px #333;
+  border-bottom: solid 4px #333;
+  box-shadow: 0 1px 1px 1px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+}
+.keyboard__white__btn--press{
+  background: linear-gradient(to bottom, white 10%, #aaa) !important;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
+}
+.keyboard__black{
+  
+}
+.keyboard__black__btn{
+  position: absolute;
+  background-color: #333;
+  height: 70%;
+  box-shadow: 0 1px 1px 2px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  color: #eee;
+}
+.keyboard__black__btn--press{
+  background: linear-gradient(to bottom, #333 , #999) !important;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
+}
+
+
+
+@media screen and (orientation: portrait) {
+  /*竖屏 css*/
+  body{
+    background-color: red;
+  }
+  .piano{
+    width: 100vh;
+    height: 100vw;
+    /*这里精辟啊，如果是竖屏就以左上角为中心旋转顺时针90deg，然后再平移一个屏幕宽度，注意平移是div的上下左右边的位置*/
+    transform-origin: 0 0;
+    transform: rotate(90deg) translate(0,-100vw);
+    position: absolute;
+  }
+
+} 
+@media screen and (orientation: landscape) {
+  /*横屏 css*/
+}
