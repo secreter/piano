@@ -64,7 +64,6 @@ ul{
 @media screen and (orientation: portrait) {
   /*竖屏 css*/
   body{
-    background-color: red;
   }
   .piano{
     width: 100vh;
